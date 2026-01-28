@@ -1,0 +1,26 @@
+{% extends "UserBase.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="card shadow-sm mt-4">
+        <div class="card-header bg-dark text-light">
+            <h3 class="mb-0">FAQ List</h3>
+        </div>
+
+        <div class="card-body">
+            <!-- FAQ List -->
+            <div class="list-group">
+                {% for faq in faqs %}
+                    <div class="list-group-item bg-light text-dark mb-3 shadow-sm rounded">
+                        <h5><strong>Subject:</strong> {{ faq['subject'] }}</h5> <!-- Access subject using dictionary key -->
+                        <p><strong>Answer:</strong> {{ faq['answer'] }}</p> <!-- Access answer using dictionary key -->
+                    </div>
+                    <hr class="bg-dark">
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

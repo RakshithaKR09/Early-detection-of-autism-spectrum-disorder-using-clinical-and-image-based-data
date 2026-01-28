@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}User Login - Autism Detection Portal{% endblock %}
+
+{% block content %}
+
+<!-- Login Form Section -->
+<section class="user-login-section my-5 container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="info-block p-4 shadow-sm">
+                <h4 class="text-center mb-4">Login to Your Account</h4>
+                {% if msg %}
+                    <!-- Check msg_type to display success or error message -->
+                    {% if msg_type == 'success' %}
+                        <div class="alert alert-success text-center">{{ msg }}</div>
+                    {% elif msg_type == 'error' %}
+                        <div class="alert alert-danger text-center">{{ msg }}</div>
+                    {% endif %}
+                {% endif %}
+                <form action="/userlogin" method="POST">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+                <div class="text-center mt-3">
+                    <p>Don't have an account? <a href="/registration" class="text-primary">New User? Register Here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

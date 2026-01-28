@@ -1,0 +1,104 @@
+<!-- autismdetection.html -->
+{% extends "UserBase.html" %}
+
+{% block title %}Autism Detection - Autism Detection Portal{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="card shadow-sm mt-4">
+            <div class="card-header bg-dark text-light">
+                <h3 class="mb-0">Autism Detection Form</h3>
+            </div>
+            <div class="card-body">
+                <form action="/AutismDetectionUsingClinicalDatapredict" method="POST">
+                    <h5 class="mb-3">Enter Your Details for Autism Screening</h5>
+                    
+                    <!-- Numerical Inputs -->
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="A1">A1:</label>
+                            <input type="number" class="form-control" name="A1" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="A2">A2:</label>
+                            <input type="number" class="form-control" name="A2" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="A3">A3:</label>
+                            <input type="number" class="form-control" name="A3" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="A4">A4:</label>
+                            <input type="number" class="form-control" name="A4" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="A5">A5:</label>
+                            <input type="number" class="form-control" name="A5" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="A6">A6:</label>
+                            <input type="number" class="form-control" name="A6" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="A7">A7:</label>
+                            <input type="number" class="form-control" name="A7" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="A8">A8:</label>
+                            <input type="number" class="form-control" name="A8" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="A9">A9:</label>
+                            <input type="number" class="form-control" name="A9" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="A10">A10:</label>
+                            <input type="number" class="form-control" name="A10" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="Age">Age:</label>
+                            <input type="number" class="form-control" name="Age" required>
+                        </div>
+                    </div>
+
+                    <!-- Categorical Inputs -->
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="Sex">Sex:</label>
+                            <select class="form-control" name="Sex" required>
+                                <option value="0">Female</option>
+                                <option value="1">Male</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="Jaundice">Jaundice:</label>
+                            <select class="form-control" name="Jaundice" required>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="Family_ASD">Family with Autism:</label>
+                            <select class="form-control" name="Family_ASD" required>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

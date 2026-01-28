@@ -1,0 +1,40 @@
+{% extends 'AdminBase.html' %}
+
+{% block title %}
+    FAQ List - Autism Detection
+{% endblock %}
+
+{% block content %}
+<!-- FAQ List Section -->
+<div class="container my-5">
+    <div class="card">
+        <div class="card-header bg-dark text-white">
+            <h3 class="mb-0">FAQ List</h3> <!-- White Font for Heading -->
+        </div>
+        <div class="card-body">
+            <!-- Outer Box for FAQs -->
+            {% if faqs %}
+                {% for faq in faqs %}
+                <div class="faq-box p-4 shadow-sm mb-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5><strong>Subject:</strong> {{ faq['subject'] }}</h5> <!-- FAQ Subject -->
+                            <p><strong>Answer:</strong> {{ faq['answer'] }}</p> <!-- FAQ Answer -->
+                            <form action="{{ url_for('delete_faq', faq_id=faq['id']) }}" method="post">
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No FAQs found.</p>
+            {% endif %}
+            <!-- Button to Add New FAQ -->
+            <div class="text-right mt-3">
+                <a href="{{ url_for('add_faq') }}" class="btn btn-success">Add FAQ</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

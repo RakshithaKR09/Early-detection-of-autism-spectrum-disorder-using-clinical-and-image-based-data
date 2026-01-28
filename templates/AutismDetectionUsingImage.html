@@ -1,0 +1,26 @@
+{% extends "UserBase.html" %}
+
+{% block title %}Autism Detection - Upload Image{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-dark text-light text-center">
+                        <h4>Upload Image for Autism Prediction</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ url_for('AutismDetectionUsingImagepredict') }}" method="POST" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="image">Select Image (JPEG, PNG only):</label>
+                                <input type="file" class="form-control-file" id="image" name="image" accept="image/jpeg, image/png" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Upload and Predict</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

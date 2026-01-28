@@ -1,0 +1,35 @@
+{% extends 'UserBase.html' %}
+
+{% block title %}User Dashboard - Autism Detection Portal{% endblock %}
+
+{% block content %}
+
+
+<!-- Informational Blocks Section for User -->
+<section class="autism-info-section my-5 container">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="info-block p-4 shadow-sm h-100">
+                <h4>Autism Detection</h4>
+                <p>Upload your clinical data and detect autism.</p>
+                <a href="/AutismDetectionUsingClinicalData" class="btn btn-dark">Go to Detection</a>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+        <div class="info-block p-4 shadow-sm h-100">
+            <h4>Autism Detection</h4>
+            <p>Upload your Image and detect autism.</p>
+            <a href="/AutismDetectionUsingImage" class="btn btn-dark">Go to Detection</a>
+        </div>
+    </div>
+        <div class="col-md-4 mb-4">
+            <div class="info-block p-4 shadow-sm h-100">
+                <h4>Home</h4>
+                <p>Ready to log out? Click below to securely log out from your account.</p>
+                <a href="/userhome" class="btn btn-dark">Home</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

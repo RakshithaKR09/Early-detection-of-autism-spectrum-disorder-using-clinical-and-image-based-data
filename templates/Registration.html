@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block title %}User Registration - Autism Detection Portal{% endblock %}
+
+{% block content %}
+
+<!-- Registration Form Section -->
+<div class="container my-5">
+    <h2 class="text-center">Register New User</h2>
+
+    {% if msg %}
+    <!-- Check msg_type to display success or error message -->
+    {% if msg_type == 'success' %}
+        <div class="alert alert-success text-center">{{ msg }}</div>
+    {% elif msg_type == 'error' %}
+        <div class="alert alert-danger text-center">{{ msg }}</div>
+    {% endif %}
+{% endif %}
+
+    <form id="registrationForm" method="post" action="/registration" onsubmit="return validateForm(event)">
+        <div class="form-group">
+            <label for="name">Username</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your username" required maxlength="100">
+            <div class="invalid-feedback" id="nameError"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            <div class="invalid-feedback" id="emailError"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Enter your mobile number" required maxlength="10">
+            <div class="invalid-feedback" id="mobileError"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="pwd">Password</label>
+            <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter your password" required minlength="4" maxlength="8">
+            <div class="invalid-feedback" id="pwdError"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// JavaScript form validation function
+function validateForm(event) {
+    let valid = true;
+
+    // Clear previous errors
+    clearErrors();
+
+    // Validate Name (only letters and spaces, max 100 characters)
+    const name = document.getElementById('name').value;
+    const namePattern = /^[A-Za-z\s]+$/;
+    if (!name.match(namePattern) || name.length > 100) {
+        document.getElementById('nameError').innerText = "Please enter a valid username (letters only). Max 100 characters.";
+        valid = false;
+    }
+
+    // Validate Mobile (10 digits)
+    const mobile = document.getElementById('mobile').value;
+    const mobilePattern = /^[0-9]{10}$/;
+    if (!mobile.match(mobilePattern)) {
+        document.getElementById('mobileError').innerText = "Please enter a valid mobile number (10 digits).";
+        valid = false;
+    }
+
+    // Validate Email (proper email format)
+    const email = document.getElementById('email').value;
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!email.match(emailPattern)) {
+        document.getElementById('emailError').innerText = "Please enter a valid email address.";
+        valid = false;
+    }
+
+    // Validate Password (between 4 and 8 characters)
+    const password = document.getElementById('pwd').value;
+    if (password.length < 4 || password.length > 8) {
+        document.getElementById('pwdError').innerText = "Password must be between 4 to 8 characters.";
+        valid = false;
+    }
+
+    // Prevent form submission if validation fails
+    if (!valid) {
+        event.preventDefault();  // Prevent form from submitting
+    }
+
+    return valid; // If everything is valid, return true to submit form
+}
+
+// Function to clear error messages
+function clearErrors() {
+    document.getElementById('nameError').innerText = "";
+    document.getElementById('emailError').innerText = "";
+    document.getElementById('mobileError').innerText = "";
+    document.getElementById('pwdError').innerText = "";
+}
+</script>
+{% endblock %}

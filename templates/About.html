@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}About - Autism Detection Portal{% endblock %}
+
+{% block content %}
+
+<!-- About Us Section -->
+<section class="autism-info-section my-5 container">
+    <div class="row">
+        <div class="col-md-12 mb-4">
+            <div class="info-block p-4 shadow-sm h-100">
+                <h4>Our Mission</h4>
+                <p>Our mission is to help healthcare providers accurately diagnose autism spectrum disorders (ASD) at an early stage. By utilizing clinical behavioral data and image-based analysis, we aim to deliver a comprehensive and innovative solution for autism detection. Early diagnosis plays a key role in improving treatment outcomes and enhancing the quality of life for individuals with autism.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="autism-info-section my-5 container">
+    <h3 class="text-center mb-4">Key Features of the Autism Detection Portal</h3>
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="info-block p-4 shadow-sm h-100">
+                <img src="{{ url_for('static', filename='images/data-analysis.jpg') }}" class="img-fluid mb-3" alt="Clinical Data Analysis">
+                <h4>Clinical Data Analysis</h4>
+                <p>We analyze clinical data including cognitive tests, behavioral assessments, and medical history to identify patterns associated with autism.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="info-block p-4 shadow-sm h-100">
+                <img src="{{ url_for('static', filename='images/image-analysis.jpg') }}" class="img-fluid mb-3" alt="Image Analysis">
+                <h4>Image-Based Diagnosis</h4>
+                <p>Our platform uses advanced image analysis techniques to assess visual markers of autism, offering additional layers of diagnostic information.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="info-block p-4 shadow-sm h-100">
+                <img src="{{ url_for('static', filename='images/early-detection.jpg') }}" class="img-fluid mb-3" alt="Early Detection">
+                <h4>Early Detection</h4>
+                <p>We provide early detection capabilities that allow healthcare professionals to begin treatment sooner, potentially leading to better outcomes for individuals on the autism spectrum.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="autism-info-section my-5 container">
+    <h3 class="text-center mb-4">How the Portal Works</h3>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="info-block p-4 shadow-sm h-100">
+                <h4>Step 1: Upload Clinical Data</h4>
+                <p>Users can upload a range of clinical data such as medical history, cognitive assessments, and behavior reports, which we use to analyze potential autism spectrum disorder (ASD) patterns.</p>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="info-block p-4 shadow-sm h-100">
+                <h4>Step 2: Upload Images for Analysis</h4>
+                <p>In addition to clinical data, the portal supports image uploads (e.g., brain scans or facial expressions) for advanced image processing to help detect visual cues of autism.</p>
+            </div>
+        </div>
+        <div class="col-md-12 mb-4">
+            <div class="info-block p-4 shadow-sm h-100">
+                <h4>Step 3: Generate Prediction</h4>
+                <p>Once the clinical and image data are processed, the portal generates a prediction on the likelihood of autism, helping healthcare providers make informed decisions for early intervention.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

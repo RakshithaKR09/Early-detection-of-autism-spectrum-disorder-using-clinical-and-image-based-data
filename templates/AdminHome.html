@@ -1,0 +1,52 @@
+{% extends 'AdminBase.html' %}
+
+{% block title %}Admin Dashboard - Data Deduplication{% endblock %}
+
+{% block content %}
+<!-- Admin Welcome Section -->
+<section class="admin-dashboard-container my-5">
+    <div class="container">
+        <div class="card shadow-sm">
+            <div class="card-header bg-dark text-light">
+                <h3 class="mb-0">Welcome to the Admin Dashboard</h3>
+            </div>
+
+            <div class="card-body">
+                <p class="lead">As an Admin, you can manage a list of users, FAQs, and other system functionalities.</p>
+                <hr class="my-4" style="border-color: #003366;">
+                <p>Click below to manage users or FAQs:</p>
+
+                <!-- Admin Actions -->
+                <div class="row text-center">
+                    <!-- Manage Users -->
+                    <div class="col-md-4 mb-4">
+                        <div class="info-block p-4 shadow-sm h-100">
+                            <h4>Manage Users</h4>
+                            <p>View and manage registered users.</p>
+                            <a href="/adminuserslist" class="btn btn-dark">Manage Users</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Manage FAQ -->
+                    <div class="col-md-4 mb-4">
+                        <div class="info-block p-4 shadow-sm h-100">
+                            <h4>Manage FAQ</h4>
+                            <p>Edit and manage frequently asked questions.</p>
+                            <a href="/adminfaqlist" class="btn btn-dark">Manage FAQs</a>
+                        </div>
+                    </div>
+
+                    <!-- Logout -->
+                    <div class="col-md-4 mb-4">
+                        <div class="info-block p-4 shadow-sm h-100">
+                            <h4>Logout</h4>
+                            <p>Ready to log out? Click below to securely log out.</p>
+                            <a href="/adminlogout" class="btn btn-dark">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

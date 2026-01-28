@@ -1,0 +1,30 @@
+{% extends "UserBase.html" %}
+
+{% block title %}Prediction Result - Autism Detection{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-dark text-light text-center">
+                        <h4>Autism Detection Prediction</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="mb-4">The uploaded image is classified as:</h5>
+                        <h3 class="text-{{ 'success' if prediction == 'Autistic' else 'danger' }}">
+                            {{ prediction }}
+                        </h3>
+                        <div class="mt-4">
+                            <!-- Correct way to use url_for to reference the uploaded image -->
+                            <img src="{{ url_for('static', filename='uploads/' + image_url) }}" class="img-fluid" alt="Uploaded Image">
+                        </div>
+                        <div class="mt-4">
+                            <a href="/autismdetection" class="btn btn-secondary">Upload Another Image</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

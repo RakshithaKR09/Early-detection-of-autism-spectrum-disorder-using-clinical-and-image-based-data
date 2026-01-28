@@ -1,0 +1,66 @@
+{% extends "UserBase.html" %}
+
+{% block title %}Prediction Results - Autism Detection Portal{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <!-- Result Card -->
+                <div class="card shadow-sm">
+                    <div class="card-header bg-dark text-light text-center">
+                        <h4>Autism Prediction Results</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Final Prediction -->
+                        <div class="text-center mb-4">
+                            <h5><strong>Final Prediction (All Models):</strong></h5>
+                            <h3 class="text-{{ 'success' if final_prediction == 'YES (Autism)' else 'danger' }}">
+                                {{ final_prediction }}
+                            </h3>
+                        </div>
+
+                        <!-- Individual Model Predictions -->
+                        <h5 class="mb-3">Individual Model Predictions:</h5>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card shadow-sm mb-3">
+                                    <div class="card-header bg-primary text-light text-center">
+                                        Random Forest
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <p class="lead">{{ model_predictions['Random Forest'] }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card shadow-sm mb-3">
+                                    <div class="card-header bg-warning text-dark text-center">
+                                        SVM
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <p class="lead">{{ model_predictions['SVM'] }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card shadow-sm mb-3">
+                                    <div class="card-header bg-success text-light text-center">
+                                        Decision Tree
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <p class="lead">{{ model_predictions['Decision Tree'] }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <a href="/autismdetection" class="btn btn-secondary">Go Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'AdminBase.html' %}
+
+{% block title %}
+    Users List - Autism Detection
+{% endblock %}
+
+{% block content %}
+    <!-- Users List Section -->
+    <div class="container my-5">
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h3 class="mb-0">Users List</h3> <!-- White Font for Heading -->
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for user in users %}
+                            <tr>
+                                <td>{{ user['id'] }}</td> <!-- User ID -->
+                                <td>{{ user['username'] }}</td> <!-- Username -->
+                                <td>{{ user['email'] }}</td> <!-- Email -->
+                                <td>{{ user['mobile'] }}</td> <!-- Mobile -->
+                                <td>
+                                    <!-- Delete User Button -->
+                                    <form action="{{ url_for('delete_user', user_id=user['id']) }}" method="post" style="display:inline;">
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

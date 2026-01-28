@@ -1,0 +1,77 @@
+{% extends 'UserBase.html' %}
+
+{% block title %}Duplicate File Searcher and Remover{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="card-title">Duplicate File Searcher and Remover</h1>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="form-group">
+                            <label for="directory">Directory Path:</label>
+                            <input type="text" class="form-control" id="directory" name="directory" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Scan for Duplicates</button>
+                    </form>
+
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <div class="alert alert-info mt-3" role="alert">
+                                <ul class="mb-0">
+                                    {% for message in messages %}
+                                        <li>{{ message }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    {% endwith %}
+
+                    {% if files_list %}
+                        <h2 class="mt-4">Files in Directory</h2>
+                        <ul class="list-group">
+                            {% for file in files_list %}
+                                <li class="list-group-item">{{ file }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    {% if duplicates %}
+                        <h2 class="mt-4">Duplicate Files and Checksums</h2>
+                        <div class="accordion mt-3" id="accordionDuplicates">
+                            {% for checksum, files in duplicates.items() %}
+                                <div class="card">
+                                    <div class="card-header" id="heading{{ loop.index }}">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                                    data-target="#collapse{{ loop.index }}" aria-expanded="true"
+                                                    aria-controls="collapse{{ loop.index }}">
+                                                Checksum: {{ checksum }}
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapse{{ loop.index }}" class="collapse"
+                                         aria-labelledby="heading{{ loop.index }}" data-parent="#accordionDuplicates">
+                                        <div class="card-body">
+                                            <ul class="list-group">
+                                                {% for file in files %}
+                                                    <li class="list-group-item">{{ file }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

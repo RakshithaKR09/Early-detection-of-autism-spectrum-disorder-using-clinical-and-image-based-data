@@ -1,0 +1,46 @@
+{% extends 'UserBase.html' %}
+
+{% block title %}User Dashboard - Autism Detection Portal{% endblock %}
+
+{% block content %}
+
+<!-- Informational Paragraph Block Section -->
+<section class="autism-info-paragraph my-5 container">
+    <div class="row text-center">
+        <div class="col-md-12 mb-4">
+            <div class="info-block p-4 shadow-sm h-100">
+                <h4>Welcome to Your Dashboard</h4>
+                <p>As a user, you can upload clinical data or images to detect autism. You can also explore the FAQ section for more information. Start by uploading clinical data or images for detection, or browse through the FAQs for assistance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Informational Blocks Section for User -->
+<section class="autism-info-section my-5 container">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="info-block p-4 shadow-sm h-100">
+                <h4>Autism Detection</h4>
+                <p>Upload your clinical data or images to detect autism.</p>
+                <a href="/autismdetection" class="btn btn-dark">Go to Detection</a>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="info-block p-4 shadow-sm h-100">
+                <h4>FAQ</h4>
+                <p>Have questions? Browse the Frequently Asked Questions to find answers and more details.</p>
+                <a href="/userfaqlist" class="btn btn-dark">View FAQs</a>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="info-block p-4 shadow-sm h-100">
+                <h4>Logout</h4>
+                <p>Ready to log out? Click below to securely log out from your account.</p>
+                <a href="/userlogout" class="btn btn-dark">Logout</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

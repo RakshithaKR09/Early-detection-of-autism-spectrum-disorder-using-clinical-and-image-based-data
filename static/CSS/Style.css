@@ -1,0 +1,229 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #333; /* Dark gray background for the navbar */
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: white !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #a9c8e0 !important; /* Light blue text on hover */
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #333; /* Dark gray background to match menu and footer */
+    color: white; /* White text for good contrast */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Full-width slider */
+.slider-full-width {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.slider-full-width .carousel-inner img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #003366;
+}
+
+/* Autism Info Section */
+.autism-info-section {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.info-block {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info-block:hover {
+    transform: translateY(-5px);
+}
+
+.info-block img {
+    border-radius: 8px;
+    width: 100%; /* Ensures image fills the container */
+    max-width: 250px; /* Fix image width */
+    height: 250px; /* Fix image height */
+    object-fit: cover; /* Ensure image covers the container without stretching */
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto; /* Center align the image */
+}
+
+.info-block h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.info-block p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #333; /* Dark gray to match navbar and hero */
+    color: #ffffff;
+    font-size: 0.95rem;
+    padding: 15px 0;
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .slider-full-width .carousel-inner img {
+        height: 350px;
+    }
+
+    .autism-info-section {
+        padding: 20px 10px;
+    }
+
+    .info-block {
+        margin-bottom: 20px;
+    }
+
+    .info-block h4 {
+        font-size: 1.1rem;
+    }
+
+    .info-block p {
+        font-size: 0.95rem;
+    }
+
+    /* Adjust image size for mobile */
+    .info-block img {
+        width: 100%; /* Ensure the image takes up full width on smaller screens */
+        max-width: 200px; /* Fix image width for mobile */
+        height: 160px; /* Reduce height on smaller screens */
+    }
+}
+
+
+
+
+
+
+/* Style for FAQ Box */
+.faq-box {
+    background-color: #f8f9fa;  /* Light background for each FAQ box */
+    border: 1px solid #ddd;  /* Light border around each box */
+    border-radius: 10px;  /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Soft shadow effect */
+    padding: 20px;  /* Padding inside the box */
+}
+
+/* Styling for Table Headers */
+.card-header {
+    background-color: #343a40;  /* Dark background for header */
+    color: #fff;  /* White text color */
+}
+
+/* Styling for FAQ Subject and Answer */
+.faq-box h5 {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Styling for Buttons */
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+/* Styling for Add FAQ Button */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+/* Additional Padding and Spacing */
+.card-body {
+    padding: 30px;
+}
+
+.mb-4 {
+    margin-bottom: 20px;
+}
+
+.text-right {
+    margin-top: 20px;
+}
+
+
+
+
+
+/* Add some custom styles for the result page */
+.result-image {
+    max-width: 80%;
+    margin: 20px auto;
+    display: block;
+}
+
+/* Prediction Text */
+h3.text-success {
+    color: green;
+}
+
+h3.text-danger {
+    color: red;
+}
