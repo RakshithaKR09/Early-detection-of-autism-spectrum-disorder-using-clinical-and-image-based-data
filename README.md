@@ -1,0 +1,2 @@
+# Early-detection-of-autism-spectrum-disorder-using-clinical-and-image-based-data
+This project focuses on the early identification of Autism Spectrum Disorder (ASD) by analyzing both clinical data (behavioral and medical information) and image-based data (such as brain scans or facial features). Early diagnosis helps in providing timely therapy and improving the quality of life for children with ASD.
